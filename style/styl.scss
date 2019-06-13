@@ -1,0 +1,225 @@
+$first : rgb(0, 255, 135);
+$second : rgb(56, 0, 61);
+$third : rgb(233, 0, 83);
+
+$duration:0.3s;
+
+body,html{
+    height: 100%;
+    box-sizing: border-box;
+}
+
+//------navbar--------------------
+
+.navbar {
+    box-sizing: border-box;
+    margin-bottom: 0;
+    padding: 0;
+    background-color: $second;
+    font-size: 18px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    position: relative;
+    li a, .navbar-brand {
+        float: right;
+        display: block;
+        //color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        border-bottom: 3px solid transparent;
+        color: $first !important;
+
+    }
+
+
+}
+
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+}
+
+.navbar-nav li a:hover, .navbar-nav li.active a {
+    color: $second !important;
+    background-color: $first !important;
+    border-bottom: 2px $second solid;
+    transition-duration: .3s;
+    
+}
+
+.bg{
+    -webkit-clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 56% 100%);
+    clip-path: polygon(28% 0%, 100% 0%, 100% 100%, 60% 100%);
+    background-color: $third;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    position: absolute;
+}
+
+.login{
+    width: 320px;
+    height: 450px !important;
+    margin-top: 50px;
+    padding: 20px 40px;
+    font-size: 1.1em;
+    color:black;
+    line-height: 1.5em;
+//    background-color: rgb(243,197,189); // Old browsers
+    background : $second;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    
+    h2{
+        text-align: center;
+        font-weight: bold;
+        color: #fff;
+        font-size: 2em;
+    }
+
+    p{
+        // display: block;
+        margin: 10px 0px;
+        color: #fff;
+    }
+
+    input[type="text"],input[type="password"]{
+        width: 100%;
+        height: 40px;
+        font-size: 16px;
+        background-color: transparent;
+        outline: none;
+        border:none;
+        color: #fff;
+        // display: block;
+        border-bottom: 2px white solid;
+
+        &::placeholder{
+            color:rgba(229, 226, 226, 0.7);
+            //font-weight: bold;
+        }
+    
+    }
+
+    button[type="submit"]{
+        margin: 20px 0;
+        margin-left: 15%;
+        width: 180px;
+        height: 40px;
+        cursor: pointer;
+        text-align: center;
+        border-radius: 25px; 
+        border: 2px white solid;
+        background-color: transparent;
+        color:white;
+
+        &:hover{
+            background: white;
+            color: $second;
+            transition-delay: .5s;
+            transition: ease-in;
+        }
+    }
+
+    a{
+        background-color: transparent;
+        border: none;
+        font-weight: bold;
+        cursor: pointer;
+        &:hover{
+            text-decoration: none;
+        }
+    }
+}
+
+.post{
+    h2{
+        padding: 0;
+        margin: 0;
+    }
+    margin-top: 50px;
+    img{
+        width: 100%;
+        height: 350px;
+    }
+}
+
+
+//-------------card UI-----------------------
+
+.carte{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    width: 320px;
+    height: 500px;
+    transform: translate(-50%,-50%) translateZ(0px);
+    background-color: #fff;
+    box-shadow: 0px 0px 20px rgba(0,0,0,.1);
+    transition: box-shadow $duration;
+
+    &:hover{
+        box-shadow: 0px 0px 50px rgba(0,0,0,.3);
+    }
+    
+    .card__thumb{
+        background-color: #000;
+        overflow: hidden;
+        height: 235px;
+//        transition: height $duration;
+        img{
+            display: block;
+            width: 100%;
+            opacity: 1;
+            transform: scale(1);
+            transition: $duration;
+        }
+        
+        .carte:hover & img{
+            opacity: 0.6;
+            transform: scale(1.2);
+        }
+
+    }
+
+    .carte:hover {
+        .card__thumb{
+            height: 90px;
+        }
+    }
+
+
+    .card__date{
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        background-color: $second;
+        color: #fff;
+        font-weight: bold;
+        text-align: center;
+        line-height: 13px;
+        padding-top: 8px;
+        border-radius: 50%;
+    
+        &__day{
+            font-size: 14px;
+            display: block;
+        }
+        &__month{
+            font-size: 10px;
+            display: block;
+            text-transform: uppercase;
+        }
+    }
+
+    &:hover .card__thumb img{
+        opacity: 0.6;
+    }
+
+}
